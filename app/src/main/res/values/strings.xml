@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">projetoIntegrador</string>
+    <string-array name="sexo">
+        <item>Fêmea</item>
+        <item>Macho</item>
+    </string-array>
+    <string-array name="especie">
+        <item>Fêmea</item>
+        <item>Macho</item>
+    </string-array>
+    <string-array name="local">
+        <item>Bela Vista</item>
+        <item>Cocaia</item>
+        <item>Cumbica</item>
+    </string-array>
+</resources>

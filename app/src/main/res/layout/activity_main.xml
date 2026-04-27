@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6E5E5"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="3dp"
+                tools:layout_editor_absoluteY="16dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:text="Olá, Kimberly!"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.279"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.788" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="64dp"
+                    android:layout_height="59dp"
+                    app:layout_constraintBottom_toTopOf="@+id/button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.694"
+                    app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="64dp"
+                    android:layout_height="59dp"
+                    app:layout_constraintBottom_toTopOf="@+id/button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.694"
+                    app:srcCompat="@android:drawable/star_off" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="347dp"
+                    android:layout_height="129dp"
+                    app:backgroundTint="#FBFBFB"
+                    app:cornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.75"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.307" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="94dp"
+                    android:layout_height="83dp"
+                    android:background="#F2C671"
+                    app:layout_constraintBottom_toBottomOf="@+id/button"
+                    app:layout_constraintEnd_toEndOf="@+id/button"
+                    app:layout_constraintHorizontal_bias="0.805"
+                    app:layout_constraintStart_toEndOf="@+id/textView"
+                    app:layout_constraintTop_toTopOf="@+id/button"
+                    app:layout_constraintVertical_bias="0.521" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="165dp"
+                    android:layout_height="51dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Vacinas Pendentes"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/button"
+                    app:layout_constraintEnd_toEndOf="@+id/button"
+                    app:layout_constraintHorizontal_bias="0.088"
+                    app:layout_constraintStart_toStartOf="@+id/button"
+                    app:layout_constraintTop_toTopOf="@+id/button"
+                    app:layout_constraintVertical_bias="0.507" />
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:id="@+id/gridLayout"
+                    android:layout_width="345dp"
+                    android:layout_height="331dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <Button
+                        android:id="@+id/btCarteiraVacinacao"
+                        android:layout_width="167dp"
+                        android:layout_height="163dp"
+                        android:backgroundTint="#DCAA46"
+                        android:textAlignment="center"
+                        app:cornerRadius="20dp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="113dp"
+                        android:layout_height="41dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Carteira de Vacinação"
+                        android:textSize="16dp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                    <Button
+                        android:id="@+id/btCalendarioGeral"
+                        android:layout_width="165dp"
+                        android:layout_height="163dp"
+                        android:backgroundTint="#8397F4"
+                        android:textSize="16dp"
+                        app:cornerRadius="20dp"
+                        app:layout_column="0"
+                        app:layout_row="2" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="113dp"
+                        android:layout_height="41dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Calendário Geral"
+                        android:textSize="16dp"
+                        app:layout_column="0"
+                        app:layout_row="2" />
+
+                    <Button
+                        android:id="@+id/btConfig"
+                        android:layout_width="169dp"
+                        android:layout_height="163dp"
+                        android:backgroundTint="#AED77D"
+                        app:cornerRadius="20dp"
+                        app:layout_column="2"
+                        app:layout_row="2" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="113dp"
+                        android:layout_height="41dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Configurações e Perfil"
+                        android:textSize="16dp"
+                        app:layout_column="2"
+                        app:layout_row="2" />
+
+                    <Button
+                        android:id="@+id/btMeusAnimais"
+                        android:layout_width="167dp"
+                        android:layout_height="163dp"
+                        android:backgroundTint="#E695BE"
+                        app:cornerRadius="20dp"
+                        app:layout_column="2"
+                        app:layout_row="0" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="79dp"
+                        android:layout_height="41dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Meus Animais"
+                        android:textSize="16dp"
+                        app:layout_column="2"
+                        app:layout_row="0" />
+
+                </androidx.gridlayout.widget.GridLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
