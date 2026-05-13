@@ -1,10 +1,8 @@
 package com.example.projetointegrador;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
+import android.widget.RadioButton;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,7 +13,6 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Form1 extends AppCompatActivity implements View.OnClickListener {
@@ -33,6 +30,7 @@ public class Form1 extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_form1); // R.layout busca a pasta layout
         //R.classe que é uma espécie de catalogo de tudo oq tem no projeto
 
+        //BOTOES
         btProximo = findViewById(R.id.btProximo);
         btVoltar = findViewById(R.id.btVoltar);
         btFechar = findViewById(R.id.btFechar);
@@ -52,10 +50,10 @@ public class Form1 extends AppCompatActivity implements View.OnClickListener {
 
         //R.id referencia todos os objetos com nome/id
 
-        //A variavel que armazena uma lista de objetos que devem ser apresentados no spinner
+        // SPINNER
         String[] sexo = getResources().getStringArray(R.array.sexo);
         ArrayAdapter<String> aad = new ArrayAdapter<String>(this,
-                android.R.layout.simple_gallery_item, sexo);
+                android.R.layout.simple_spinner_item, sexo);
 
         spSexo.setAdapter(aad);
     }
@@ -74,15 +72,27 @@ public class Form1 extends AppCompatActivity implements View.OnClickListener {
                 idade = Integer.parseInt(idadeStr);
             }
 
-            //  SALVAR NO BANCO
-            BancoControllerAnimais controller = new BancoControllerAnimais(this);
-            controller.insereDados(nome, idade, sexo, data, null, null, null, null);
+            // CAPTURAR PORTE
+            int idSelecionado = rgPorte.getCheckedRadioButtonId();
 
-            Toast.makeText(this, "Dados salvos!", Toast.LENGTH_SHORT).show();
+            if (idSelecionado == -1) {
+                Toast.makeText(this, "Selecione o porte!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            RadioButton radioSelecionado = findViewById(idSelecionado);
+            String porte = radioSelecionado.getText().toString();
+
+            Intent intent = new Intent(this, Form2.class);
+
+            intent.putExtra("nome", nome);
+            intent.putExtra("idade", idade);
+            intent.putExtra("sexo", sexo);
+            intent.putExtra("data", data);
+            intent.putExtra("porte", porte);
 
             // Ir para próxima tela
-            Intent main = new Intent(this, Form2.class);
-            startActivity(main);
+            startActivity(intent);
         }
 
         // VOLTAR TELA
@@ -93,7 +103,7 @@ public class Form1 extends AppCompatActivity implements View.OnClickListener {
         // FECHAR E IR AO MENU
         if (view.getId() == R.id.btFechar) {
 
-            FormBanco.limpar(); // limpa os dados
+         //  FormBanco.limpar(); // limpa os dados
 
             Intent main = new Intent(this, MainActivity.class);
             startActivity(main);

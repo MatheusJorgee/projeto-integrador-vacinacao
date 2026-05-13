@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoIntegrador">
         <activity
+            android:name=".testelogin"
+            android:exported="false" />
+        <activity
+            android:name=".ListarBanco"
+            android:exported="false" />
+        <activity
             android:name=".Form1"
             android:exported="false" />
         <activity

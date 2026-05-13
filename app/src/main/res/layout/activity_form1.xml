@@ -109,10 +109,9 @@
                     android:id="@+id/txtNome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
                     android:layout_marginBottom="12dp"
+                    android:ems="10"
                     android:inputType="text"
-                    android:text="DIgite o nome"
                     android:textSize="14sp" />
 
                 <!-- Idade -->
@@ -130,7 +129,6 @@
                     android:layout_marginBottom="12dp"
                     android:ems="10"
                     android:inputType="number"
-                    android:text="Digite a idade"
                     android:textSize="14sp" />
 
                 <!-- Sexo -->
@@ -162,7 +160,6 @@
                     android:ems="10"
                     android:inputType="date"
                     android:textSize="14sp"
-                    android:text="00/00/00"
                     android:layout_marginBottom="12dp"/>
 
                 <!-- Porte -->
@@ -179,16 +176,19 @@
                     android:layout_marginBottom="12dp">
 
                     <RadioButton
+                        android:id="@+id/rbGrande"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Grande" />
 
                     <RadioButton
+                        android:id="@+id/rgMedio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Médio" />
 
                     <RadioButton
+                        android:id="@+id/rgPequeno"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Pequeno"/>
