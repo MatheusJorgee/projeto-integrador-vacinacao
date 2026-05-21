@@ -10,9 +10,13 @@ import android.widget.ImageButton;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     ImageButton btCarteiraVacinacao, btMeusAnimais, btCalendarioGeral, iconUsuario, btMeuPerfil;
+
+    BottomNavigationView bottomNav;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -33,7 +37,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btCalendarioGeral.setOnClickListener(this);
         iconUsuario.setOnClickListener(this);
         btMeuPerfil.setOnClickListener(this);
+
+        bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setSelectedItemId(R.id.nav_home); // marca o ícone como ativo
+
+        bottomNav.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+
+            if (id == R.id.nav_home) {
+                return true;
+
+            } else if (id == R.id.nav_search) {
+                startActivity(new Intent(this, MeusAnimais.class));
+                return true;
+
+            } else if (id == R.id.nav_add) {
+                startActivity(new Intent(this, Form1.class));
+                return true;
+
+            }  else if (id == R.id.nav_calendar) {
+                startActivity(new Intent(this, CalendarActivity.class));
+                return true;
+            } else if (id == R.id.nav_profile) {
+            startActivity(new Intent(this, InfoUsuario.class));
+            return true;
+        }
+
+            return false;
+        });
     }
+
+
 
     @Override
     public void onClick(View view) {
@@ -56,8 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         // AO CLICAR EM NO BOTÃO "btCalendarioGeral" VAI PARA A TELA CALENDARIO GERAL
         if (view.getId() == R.id.btCalendarioGeral){
-            // Chama a tela Form3
-            Intent tela2 = new Intent(this, Form3.class); // Mudar a tela!
+            // Chama a tela calendar
+            Intent tela2 = new Intent(this, CalendarActivity.class); // Mudar a tela!
             startActivity(tela2);
         }
         // AO CLICAR EM NO BOTÃO "btCalendarioGeral" VAI PARA A TELA MEU PERFIL

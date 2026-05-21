@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Supabase - Banco
+app/src/main/java/com/example/projetointegrador/SupabaseConfig.java
