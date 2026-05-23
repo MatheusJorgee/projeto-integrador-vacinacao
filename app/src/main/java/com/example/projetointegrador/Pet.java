@@ -18,6 +18,8 @@ public class Pet implements Serializable {
     private String pelo;
     private String docil;
     private String anotacoes;
+    private String fotoUrl;
+
 
     // Construtor
     public Pet(String nome, int idade, String sexo, String data, String porte, String especie,
@@ -36,7 +38,10 @@ public class Pet implements Serializable {
         this.pelo = pelo;
         this.docil = docil;
         this.anotacoes = anotacoes;
+        this.fotoUrl = null;
     }
+    public void setFotoUrl(String fotoUrl) { this.fotoUrl = fotoUrl; }
+
 
     // Getters e Setters
     public int getId() {
@@ -98,4 +103,7 @@ public class Pet implements Serializable {
     public String getAnotacoes() {
         return anotacoes;
     }
+
+    public String getFotoUrl() { return fotoUrl; }
+
 }
