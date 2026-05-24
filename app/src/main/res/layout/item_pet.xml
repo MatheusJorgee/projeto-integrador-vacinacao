@@ -9,49 +9,66 @@
     android:layout_marginTop="5dp"
     android:layout_marginRight="20dp"
     app:cardCornerRadius="10dp"
-    app:cardElevation="4dp">
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#FFFFFF">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:padding="15dp">
+        android:padding="10dp">
 
-        <TextView
-            android:id="@+id/txtNomeCard"
+        <LinearLayout
+            android:id="@+id/layoutTextos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome do Pet"
-            android:textColor="#333333"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:orientation="vertical"
+            android:layout_toEndOf="@id/imgAnimalCard"
+            android:layout_marginStart="12dp"
+            android:layout_centerVertical="true">
 
-        <TextView
-            android:id="@+id/txtEspecieCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtNomeCard"
-            android:layout_marginTop="5dp"
-            android:text="Espécie"
-            android:textColor="#666666"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/txtNomeCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome do Pet"
+                android:textColor="#333333"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-        <TextView
+            <TextView
+                android:id="@+id/txtEspecieCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Sexo, X anos"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!--<TextView
             android:id="@+id/txtIdCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtEspecieCard"
             android:text="ID"
             android:textColor="#666666"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:layout_toEndOf="@id/imgAnimalCard"
+            android:layout_marginStart="12dp"/>-->
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
+            android:id="@+id/imgAnimalCard"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:alpha="0.5"
-            android:src="@drawable/pata" />
+            android:background="@drawable/bg_icon_pet"
+            android:src="@drawable/ic_animals"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true"
+            android:outlineProvider="background"/>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

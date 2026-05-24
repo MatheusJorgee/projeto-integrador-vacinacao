@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#6D6D6D"
+        android:background="@drawable/fundo_form"
         android:orientation="vertical">
 
         <!-- Título -->
@@ -201,6 +201,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#282626"
+                    android:textColor="@android:color/white"
                     android:text="Próximo" />
             </LinearLayout>
 
